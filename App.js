@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { Alert, StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-web';
-
+import Signin from './screen/signin'
+import Index from './components/dangky'
+import Index_dangnhap from './components/dangnhap'
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={hinh.shape1}>
+      {/* <View style={hinh.shape1}>
         <Text>hinh 1</Text>
         <StatusBar style="auto" />
       </View>
@@ -18,7 +19,10 @@ export default function App() {
       <View style={hinh.shape3}>
         <Text>hinh 3</Text>
         <StatusBar style="auto" />
-      </View>
+      </View> */}
+      {/* <Signin /> */}
+      {/* <Index/> */}
+      <Index_dangnhap/>
     </View>
     
   );
@@ -28,10 +32,10 @@ const styles = StyleSheet.create({
   container: {
     flex:1  ,
     // backgroundColor: '#FFFFF',
-    alignItems: 'center',
-    margin: 50,
-    flexDirection: 'row',
-    justifyContent:'space-around',
+    // alignItems: 'center',
+    // margin: 50,
+    // flexDirection: 'row',
+    // justifyContent:'space-around',
   },
 });
 
