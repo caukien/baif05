@@ -2,29 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import { Alert, StyleSheet, Text, View } from 'react-native';
 import Signin from './screen/signin'
 import Index from './components/dangky'
-import Index_dangnhap from './components/dangnhap'
+import Dangnhap from './components/Dangnhap';
+
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <View style={hinh.shape1}>
-        <Text>hinh 1</Text>
-        <StatusBar style="auto" />
-      </View>
-
-      <View style={hinh.shape2}>
-        <Text>hinh 2</Text>
-        <StatusBar style="auto" />
-      </View>
-
-      <View style={hinh.shape3}>
-        <Text>hinh 3</Text>
-        <StatusBar style="auto" />
-      </View> */}
-      {/* <Signin /> */}
-      {/* <Index/> */}
-      <Index_dangnhap/>
-    </View>
-    
+    <Index/>
   );
 }
 

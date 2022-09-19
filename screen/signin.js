@@ -1,50 +1,51 @@
 import { StatusBar } from 'expo-status-bar';
-import { Alert, StyleSheet, Text, View, Button, Image } from 'react-native';
-import Logo from '../anh/logo.png';
+import { Alert, StyleSheet, Text, View, Button, Image,TouchableOpacity } from 'react-native';
+import Logo2 from '../assets/anh/logo2.png';
 export default function signin() {
     return (
-        <View>
-            <View style={{justifyContent: "center"}}>
-                <View styles={{ alignItems: 'center' }}>
-                    <Image source={Logo} style={styles.logo} />
+        <View style={styles.container}>
+                <View >
+                    <Image source={Logo2} style={{height:300, width:300,marginBottom:50}}/>
                 </View>
-
-                <View style={styles.nut}>
-                    <Button
-                        title="Đăng nhập"
-                        color='#2bc2bc'
-                        onPress={() => Alert.alert('Chưa đăng nhập được đâu')}
-                    />
+                <View style={{alignItems:'flex-end'}}>
+                    <TouchableOpacity style={styles.css_nut}>
+                        <Text style={{fontWeight:'bold'}}>Tiếp tục với số điện thoại</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.css_nut}>
+                        <Text style={{fontWeight:'bold'}}>Tiếp tục với FaceBook</Text>
+                    </TouchableOpacity>
                 </View>
-                <View style={styles.nut}>
-                    <Button style={styles.hinh_nut}
-                        title="Đăng kí"
-                        color='#2bc2bc'
-                        onPress={() => Alert.alert('Chưa đăng nhập được đâu')}
-                    />
-                </View>
-            </View>
         </View>
 
     );
 }
 
 const styles = StyleSheet.create({
+    container:{
+        width:'100%',
+        height:'100%',
+        backgroundColor:'#2bc2bc',
+        justifyContent:'center',
+        alignItems:'center',
+    },
     logo: {
         height: 100,
         width: 100,
-        marginTop: 200,
+        // marginTop: 200,
         marginBottom: 50,
-        borderRadius: 10,
-        marginStart: 155,
-
+        // borderRadius: 10,
+        // marginStart: 155,
     },
-    nut: {
-        marginBottom: 50,
-        width: "80%",
-        marginStart: 40,
+    css_nut:{
+        // alignItems:'flex-end',
+        height:50,
+        width:350,
+        backgroundColor:'white',
+        alignItems:'center',
+        justifyContent:'center',
+        borderRadius:10,
+        marginBottom:40,
+        paddingHorizontal:20,
     },
-    hinh_nut: {
-
-    },
+    
 });
