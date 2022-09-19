@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Alert, StyleSheet, Text, View } from 'react-native';
 import Signin from './screen/signin'
-import Index from './components/dangky'
+import Register from './components/dangky'
 import Dangnhap from './components/Dangnhap';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -13,7 +13,7 @@ export default function App() {
     <NavigationContainer>
         <Stack.Navigator initialRouteName="Signin" screenOptions={{headerShown:false}}>
         <Stack.Screen name='Signin' component={Signin}></Stack.Screen>
-        <Stack.Screen name="Index" component={Index} />
+        <Stack.Screen name="Register" component={Register} />
       </Stack.Navigator>
     </NavigationContainer>
   );

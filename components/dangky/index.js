@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Alert, StyleSheet, Text, View, Button, Image, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 
-export default function index() {
+export default function Register() {
     return (
         <><View style={{
             justifyContent: 'center',
