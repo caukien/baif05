@@ -3,13 +3,22 @@ import { Alert, StyleSheet, Text, View } from 'react-native';
 import Signin from './screen/signin'
 import Index from './components/dangky'
 import Dangnhap from './components/Dangnhap';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <Index/>
+    <NavigationContainer>
+        <Stack.Navigator initialRouteName="Signin" screenOptions={{headerShown:false}}>
+        <Stack.Screen name='Signin' component={Signin}></Stack.Screen>
+        <Stack.Screen name="Index" component={Index} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
