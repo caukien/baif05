@@ -3,6 +3,7 @@ import { Alert, StyleSheet, Text, View, Button, Image,TouchableOpacity } from 'r
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Register from '../components/dangky';
 import Logo2 from '../assets/anh/logo2.png';
+import Dangnhap from '../components/Dangnhap/Dangnhap';
 export default function Signin({navigation}) {
     return (
         <View style={styles.container}>
@@ -14,8 +15,8 @@ export default function Signin({navigation}) {
                         onPress ={() => navigation.navigate('Register')}>
                         <Text style={{fontWeight:'bold'}}>Tiếp tục với số điện thoại</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.css_nut}>
-                        <Text style={{fontWeight:'bold'}}>Tiếp tục với FaceBook</Text>
+                    <TouchableOpacity style={styles.css_nut} onPress ={() => navigation.navigate('Dangnhap')}>
+                        <Text style={{fontWeight:'bold'}}>Đăng nhập</Text>
                     </TouchableOpacity>
                 </View>
         </View>
