@@ -1,12 +1,13 @@
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native'
 import Logo3 from '../../assets/anh/logo3.png';
 import React from 'react'
+import Register from '../dangky';
 
-export default function Dangnhap(){
+export default function Dangnhap({navigation}){
     return(
         <View style={styles.container}>
           <View>
-            <Image source={Logo3} style={{height:300, width:200,marginBottom:50}}/>
+            <Image source={Logo3} style={{height:300, width:230,marginBottom:50,}}/>
           </View>
           <View style={styles.o_nhap}>
             <TextInput style={styles.css_nut}placeholder='Email' />
@@ -14,6 +15,11 @@ export default function Dangnhap(){
             <TouchableOpacity style={styles.css_button}>
               <Text style={{fontWeight:'bold'}}>Đăng nhập</Text>
             </TouchableOpacity>
+            <Text style={{alignSelf:'center', fontWeight:'500'}}>Bạn chưa gia nhập với chúng tôi ư, 
+              <TouchableOpacity style={{padding:0}} onPress ={() => navigation.navigate('Register')}>
+                <Text style={{color:'red'}}> Đăng ký</Text>
+              </TouchableOpacity>
+            </Text>
           </View>
         </View>
       );
@@ -31,6 +37,7 @@ const styles = StyleSheet.create({
   o_nhap:{
     width:'100%',
     height:300,
+    // backgroundColor:'green'
   },
   css_nut:{
     paddingHorizontal:13,
