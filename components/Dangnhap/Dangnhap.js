@@ -12,9 +12,13 @@ export default function Dangnhap({navigation}){
           <View style={styles.o_nhap}>
             <TextInput style={styles.css_nut}placeholder='Email' />
             <TextInput style={styles.css_nut}placeholder='Mật khẩu' />
+
+
             <TouchableOpacity style={styles.css_button}>
               <Text style={{fontWeight:'bold'}}>Đăng nhập</Text>
             </TouchableOpacity>
+
+
             <Text style={{alignSelf:'center', fontWeight:'500'}}>Bạn chưa gia nhập với chúng tôi ư, 
               <TouchableOpacity style={{padding:0}} onPress ={() => navigation.navigate('Register')}>
                 <Text style={{color:'red'}}> Đăng ký</Text>

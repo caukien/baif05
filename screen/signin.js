@@ -13,7 +13,7 @@ export default function Signin({navigation}) {
                 <View style={{alignItems:'flex-end'}}>
                     <TouchableOpacity style={styles.css_nut}
                         onPress ={() => navigation.navigate('Register')}>
-                        <Text style={{fontWeight:'bold'}}>Tiếp tục với số điện thoại</Text>
+                        <Text style={{fontWeight:'bold'}}>Đăng ký</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.css_nut} onPress ={() => navigation.navigate('Dangnhap')}>
                         <Text style={{fontWeight:'bold'}}>Đăng nhập</Text>
