@@ -1,20 +1,47 @@
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, Alert } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Logo3 from '../../assets/anh/logo3.png';
-import React from 'react'
+import React, { useState } from 'react'
 import Register from '../dangky';
 
-export default function Dangnhap({navigation}){
+export default function Dangnhap({navigation},props ){
+  const [email,setEmail] = useState('');
+  const [password,setPassword]=useState('')
+  const sendCred = async (navigation)=>{
+    fetch("http://192.168.78.238:3000/signin",{
+      method:"POST",
+      headers: {
+       'Content-Type': 'application/json'
+     },
+     body:JSON.stringify({
+       "email":email,
+       "password":password
+     })
+    })
+    .then(res=>res.json())
+    .then(async (data)=>{
+           try {
+             await AsyncStorage.setItem('token',data.token)
+             props.navigation.replace("Home")
+           } catch (e) {
+             console.log("error hai",e)
+              Alert(e)
+           }
+    })
+ }
+
+
     return(
         <View style={styles.container}>
           <View>
             <Image source={Logo3} style={{height:300, width:230,marginBottom:50,}}/>
           </View>
           <View style={styles.o_nhap}>
-            <TextInput style={styles.css_nut}placeholder='Email' />
-            <TextInput style={styles.css_nut}placeholder='Mật khẩu' />
+            <TextInput style={styles.css_nut}placeholder='Email' value={email} onChangeText={(text)=>setEmail(text)}/>
+            <TextInput style={styles.css_nut}placeholder='Mật khẩu' value={password} onChangeText={(text)=>{setPassword(text)}}/>
 
 
-            <TouchableOpacity style={styles.css_button}>
+            <TouchableOpacity style={styles.css_button} onPress={() => sendCred(props)}>
               <Text style={{fontWeight:'bold'}}>Đăng nhập</Text>
             </TouchableOpacity>
 

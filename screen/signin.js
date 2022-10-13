@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { Alert, StyleSheet, Text, View, Button, Image,TouchableOpacity } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Register from '../components/dangky';
+import Home from '../screen/Home';
 import Logo2 from '../assets/anh/logo2.png';
-import Dangnhap from '../components/Dangnhap/Dangnhap';
+
 export default function Signin({navigation}) {
     return (
         <View style={styles.container}>
